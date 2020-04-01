@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--Brushes-->
+    <SolidColorBrush x:Key="BasicBrush" Color="{StaticResource BasicColor}" />
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+    <SolidColorBrush x:Key="LightBrush" Color="{StaticResource FixedColor}" />
+    <SolidColorBrush x:Key="MediumBrush" Color="{StaticResource MarkerColor}" />
+    <SolidColorBrush x:Key="StrongBrush" Color="{StaticResource StrongColor}" />
+    <SolidColorBrush x:Key="HighBrush" Color="{StaticResource StrongColor}" />
+    <SolidColorBrush x:Key="MainBrush" Color="{StaticResource MainColor}" />
+    <SolidColorBrush x:Key="FixedBrush" Color="{StaticResource FixedColor}" />
+    <SolidColorBrush x:Key="MarkerBrush" Color="{StaticResource MarkerColor}" />
+    <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="BlackBrush" Color="Black" />
+    <SolidColorBrush x:Key="ApplicationBackgroundBrush" Color="{StaticResource ApplicationBackgroundColor}" />
+    <SolidColorBrush x:Key="ApplicationForgroundBrush" Color="{StaticResource ApplicationForgroundColor}" />
+
+    <LinearGradientBrush x:Key="HalfFilledBrush"
+                     StartPoint="0,0"
+                     EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#FF131313"
+                    Offset="0" />
+                <GradientStop Color="#FF131313"
+                    Offset="0.5" />
+                <GradientStop Color="Transparent"
+                    Offset="0.51" />
+                <GradientStop Color="Transparent"
+                    Offset="1" />
+            </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+  <ImageBrush x:Key="LogoBrush" ImageSource="pack://application:,,,/Ws.Extensions.UI.Wpf;component/Assets/Images/Insightec-Logo.png" Stretch="Uniform" ></ImageBrush>
+
+
+</ResourceDictionary>

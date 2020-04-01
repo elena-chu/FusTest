@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="WpfUI.Menus.Views.MeasureMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfUI.Menus.Views"
+             xmlns:extension="http://schemas.insightec.com/wpf/"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="300">
+    
+    <UserControl.Resources>
+
+    </UserControl.Resources>
+    
+    <Grid x:Name="MeasureContent" TextBlock.FontSize="18" Height="Auto" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <!--<ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />-->
+        </Grid.ColumnDefinitions>
+        <!--<ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings" Content="±" DataContext="{Binding TargetOverlay}" />-->
+        <ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings 2" Content="È" Grid.Column="0" DataContext="{Binding FiducialsOverlay}" />
+        <!--<ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings 2" Content="Â" Grid.Column="2" DataContext="{Binding RegionalOverlay}"  />-->
+        <ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings 3" Content="G" Grid.Column="1" DataContext="{Binding MeasurementDistanceOverlay}"  />
+        <ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings 2" Content="¯" Grid.Column="2" DataContext="{Binding MeasurementAreaOverlay}"  />
+        <ToggleButton Style="{StaticResource ToggleButtonWithSubMenuMeasureStyle}" FontFamily="Wingdings 3" Content="v" Grid.Column="3" DataContext="{Binding MeasurementAngleOverlay}"  >
+            <ToggleButton.ContextMenu>
+                <ContextMenu Style="{StaticResource ToolsContextMenuSimpleStyle}" />
+            </ToggleButton.ContextMenu>
+        </ToggleButton>
+        <!--<ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings 3" Content="v" Grid.Column="3" DataContext="{Binding MeasurementAngleOverlay}"  />
+        <ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings 3" Content="x" Grid.Column="4" DataContext="{Binding MeasurementAngle90Overlay}"  />-->
+        <!--<ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings 2" Content="" Grid.Column="6" DataContext="{Binding NPRPolygonsOverlay}"  />
+        <ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings" Content="¥" Grid.Column="7" DataContext="{Binding RigidNPROverlay}" >
+        </ToggleButton>-->
+
+        <Button Style="{StaticResource ToolButtonStyle}" FontFamily="Wingdings 2" Content="Ð" Grid.Column="6" DataContext="{Binding DeleteOverlay}" Margin="10,0,0,0"/>
+        <Button Style="{StaticResource ToolButtonStyle}" FontFamily="Wingdings 2" Content="Ó" Grid.Column="7" DataContext="{Binding DeleteAllOverlay}"/>
+    </Grid>
+</UserControl>

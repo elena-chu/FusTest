@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A460DAD-0EC4-4587-B745-12C5CB667DD2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ws.Fus.Interfaces</RootNamespace>
+    <AssemblyName>Ws.Fus.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Overlays\AcPcEnabledChangedEventHandler.cs" />
+    <Compile Include="MovementDetection\MDVectorChangedEventArgs.cs" />
+    <Compile Include="Overlays\CanShowHideLayerChangedEventHandler.cs" />
+    <Compile Include="Overlays\IACPC.cs" />
+    <Compile Include="Overlays\IRigidNPR.cs" />
+    <Compile Include="Overlays\LayerVisiblityChangedEventHandler.cs" />
+    <Compile Include="Overlays\CanEnterUiModeChangedEventHandler.cs" />
+    <Compile Include="Messages\GenericMessageType.cs" />
+    <Compile Include="Messages\GenericMesssageReplyOptions.cs" />
+    <Compile Include="Calibration\ICalibration.cs" />
+    <Compile Include="Messages\IGenericMessage.cs" />
+    <Compile Include="Calibration\ILocateXD.cs" />
+    <Compile Include="MovementDetection\IMovementDetection.cs" />
+    <Compile Include="Calibration\ITargetLocation.cs" />
+    <Compile Include="Coordinates\ITransformation.cs" />
+    <Compile Include="Overlays\IUiModeChanges.cs" />
+    <Compile Include="Messages\MessageCloseEventHandler.cs" />
+    <Compile Include="Messages\MessageId.cs" />
+    <Compile Include="Messages\MessageRequestedEventHandler.cs" />
+    <Compile Include="Messages\MessageParam.cs" />
+    <Compile Include="Coordinates\PointAcPc.cs" />
+    <Compile Include="Coordinates\PointRAS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Overlays\RigidNPRTypeInfo.cs" />
+    <Compile Include="Calibration\TargetLocationChangedRasEventHandler.cs" />
+    <Compile Include="Overlays\UiMode.cs" />
+    <Compile Include="Overlays\UiModeChangedEventHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fus.Strips.Contracts\Ws.Fus.Strips.Interfaces.csproj">
+      <Project>{c29e43db-df32-44d9-95be-36e93f11e344}</Project>
+      <Name>Ws.Fus.Strips.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Overlays\SelectedOverlaysChangedEventHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fge\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

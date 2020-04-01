@@ -1,0 +1,29 @@
+<UserControl x:Class="WpfUI.Overlays.Views.OverlayShowHideView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfUI.Views"
+             xmlns:f="clr-namespace:Ws.Fus.Interfaces.Overlays;assembly=Ws.Fus.Interfaces"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:uis="clr-namespace:WpfUI.UIServices"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="700">
+  <WrapPanel Orientation="Horizontal">
+    <WrapPanel.Resources>
+      <Style TargetType="{x:Type ToggleButton}">
+        <Setter Property="Margin" Value="2,0" />
+        <Setter Property="Padding" Value="3,3" />
+      </Style>
+    </WrapPanel.Resources>
+      <ToggleButton uis:GuiModeButton.ShowHide="{x:Static f:UiMode.TargetOverlay}">TGT</ToggleButton>
+      <ToggleButton uis:GuiModeButton.ShowHide="{x:Static f:UiMode.FiducialsOverlay}">FID</ToggleButton>
+      <ToggleButton uis:GuiModeButton.ShowHide="{x:Static f:UiMode.TextOverlay}">TXT</ToggleButton>
+      <ToggleButton uis:GuiModeButton.ShowHide="{x:Static f:UiMode.MeasurementOverlay}">MSR</ToggleButton>
+      <ToggleButton uis:GuiModeButton.ShowHide="{x:Static f:UiMode.RegionsOverlay}">ROT</ToggleButton>
+      <ToggleButton uis:GuiModeButton.ShowHide="{x:Static f:UiMode.BathLimitsOverlay}">BTH</ToggleButton>
+      <ToggleButton uis:GuiModeButton.ShowHide="{x:Static f:UiMode.CalibrationDataOverlay}">XDR</ToggleButton>
+      <ToggleButton IsChecked="{Binding NprVisible}" IsEnabled="{Binding NprEnabled}">NPR show</ToggleButton>
+    </WrapPanel>
+</UserControl>

@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="WpfUI.Calibration.Views.TargetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfUI.Views"
+             xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="550">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1">
+            <Grid Margin="10 25 0 0">
+                <Grid.Resources>
+                    <Style TargetType="xctk:DoubleUpDown">
+                        <Setter Property="Margin" Value="0 0 10 0"/>
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="VerticalAlignment" Value="Top"/>
+                        <Setter Property="Increment" Value="0.1"/>
+                        <Setter Property="FormatString" Value=".0"/>
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Margin" Value="0 0 20 0"/>
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="VerticalAlignment" Value="Top"/>
+                    </Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Margin" Value="0 10"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="70"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Target RAS" Grid.Column="0" Grid.Row="0"/>
+                <TextBlock Text="RL" Grid.Column="1" Grid.Row="0"/>
+                <xctk:DoubleUpDown Value="{Binding TargetRASRL}" Grid.Column="2" Grid.Row="0" />
+                <TextBlock Text="AP" Grid.Column="3" Grid.Row="0"/>
+                <xctk:DoubleUpDown Value="{Binding TargetRASAP}" Grid.Column="4" Grid.Row="0"/>
+                <TextBlock Text="SI" Grid.Column="5" Grid.Row="0"/>
+                <xctk:DoubleUpDown Value="{Binding TargetRASSI}" Grid.Column="6" Grid.Row="0" />
+                <TextBlock Text="Target AC-PC" Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Text="ML" Grid.Column="1" Grid.Row="1"/>
+                <xctk:DoubleUpDown Value="{Binding TargetACPCML}" Grid.Column="2" Grid.Row="1" IsEnabled="{Binding TargetAcpcEnabled}"/>
+                <TextBlock Text="AP" Grid.Column="3" Grid.Row="1"/>
+                <xctk:DoubleUpDown Value="{Binding TargetACPCAP}" Grid.Column="4" Grid.Row="1"  IsEnabled="{Binding TargetAcpcEnabled}"/>
+                <TextBlock Text="SI" Grid.Column="5" Grid.Row="1"/>
+                <xctk:DoubleUpDown Value="{Binding TargetACPCSI}" Grid.Column="6" Grid.Row="1"  IsEnabled="{Binding TargetAcpcEnabled}"/>
+                <TextBlock Text="AC-PC Distance [mm]" Grid.Column="0" Grid.Row="2"/>
+                <TextBox Text="{Binding AcpcLength, StringFormat=F2}" IsReadOnly="True" Grid.Column="2" Grid.Row="2" />
+                <TextBlock Text="Origin" Grid.Column="4" Grid.Row="2"/>
+                <TextBox Text="{Binding AcpcOrigin, StringFormat={}}" IsReadOnly="True" Grid.Column="6" Grid.Row="2" />
+                <TextBlock Text="Transducer to target" Grid.Column="0" Grid.Row="3"/>
+                <TextBox Text="{Binding XdToTargetRASRL, Mode=OneWay, StringFormat={}{0:#,0.0}}" IsReadOnly="True" Grid.Column="2" Grid.Row="3"/>
+                <TextBox Text="{Binding XdToTargetRASAP, Mode=OneWay, StringFormat={}{0:#,0.0}}" IsReadOnly="True" Grid.Column="4" Grid.Row="3"/>
+                <TextBox Text="{Binding XdToTargetRASSI, Mode=OneWay, StringFormat={}{0:#,0.0}}" IsReadOnly="True" Grid.Column="6" Grid.Row="3"/>
+                <Button Content="Archive" Command="{Binding Archive}" Visibility="Collapsed"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,20 @@
+﻿{
+  "dicomServices": {
+    "UK": {
+      "dicomSettings": {
+        "qrServerHost": "www.dicomserver.co.uk"
+      }
+    },
+    "CANVAS": {
+      "dicomSettings": {
+        "qrServerHost": "192.168.8.9"
+      }
+    },
+    "MR": {
+      "dicomSettings": {
+        "qrServerHost": "192.168.9.212",
+        "qrServerAET": "EH3XTP04"
+      }
+    }
+  }
+}

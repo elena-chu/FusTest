@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7F16CA5-7C7F-4BD9-9EA5-1FC751ACADA8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfUI</RootNamespace>
+    <AssemblyName>WpfUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\CommonServiceLocator.2.0.4\lib\net46\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmMonkey.Wpf, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\MvvmMonkey.Wpf.2.1.1\lib\net45\MvvmMonkey.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Prism.Core.7.1.0.431\lib\net45\Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Prism.Unity.7.1.0.431\lib\net45\Prism.Unity.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Prism.Wpf.7.1.0.431\lib\net45\Prism.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Serilog.2.9.0\lib\net46\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Thread, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Serilog.Enrichers.Thread.3.1.0\lib\net45\Serilog.Enrichers.Thread.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=3.1.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Serilog.Sinks.Console.3.1.1\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Prism.Wpf.7.1.0.431\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Unity.Abstractions.3.3.1\lib\net46\Unity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Unity.Container.5.8.11\lib\net46\Unity.Container.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\Source\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Menus\Builders\CompareActionBuilder.cs" />
+    <Compile Include="Menus\Builders\ViewActionBuilder.cs" />
+    <Compile Include="Menus\Enums\NodeType.cs" />
+    <Compile Include="Menus\Interfaces\IActionViewModel.cs" />
+    <Compile Include="Menus\Interfaces\IPinnableMenu.cs" />
+    <Compile Include="Menus\Interfaces\IToolsMenuViewModel.cs" />
+    <Compile Include="Menus\Models\ActionInitializeParams.cs" />
+    <Compile Include="Menus\Models\LayerActionInitializeParams.cs" />
+    <Compile Include="Menus\Models\LayoutActionInitializeParams.cs" />
+    <Compile Include="Menus\ViewModels\ActionViewModelBase.cs" />
+    <Compile Include="Menus\ViewModels\CompareActionViewModel.cs" />
+    <Compile Include="Menus\ViewModels\CompareMenuViewModel.cs" />
+    <Compile Include="Menus\ViewModels\DeleteOverlayActionViewModel.cs" />
+    <Compile Include="Menus\ViewModels\MeasureActionViewModel.cs" />
+    <Compile Include="Menus\Builders\MeasureActionBuilder.cs" />
+    <Compile Include="Menus\ViewModels\MeasureMenuViewModel.cs" />
+    <Compile Include="Menus\Builders\OverlayActionBuilder.cs" />
+    <Compile Include="Menus\ViewModels\OverlayActionViewModel.cs" />
+    <Compile Include="Menus\ViewModels\OverlaysMenuViewModel.cs" />
+    <Compile Include="Menus\ViewModels\ToolboxesContainerViewModel.cs" />
+    <Compile Include="Menus\ViewModels\ToolsMenusContainerViewModel.cs" />
+    <Compile Include="Menus\ViewModels\ToolsMenuViewModelBase.cs" />
+    <Compile Include="Menus\ViewModels\ViewMenuViewModel.cs" />
+    <Compile Include="Menus\ViewModels\LayoutActionViewModel.cs" />
+    <Compile Include="Menus\Views\CompareMenuView.xaml.cs">
+      <DependentUpon>CompareMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Views\MeasureMenuView.xaml.cs">
+      <DependentUpon>MeasureMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Views\OverlayMenuView.xaml.cs">
+      <DependentUpon>OverlayMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Views\ToolboxesContainerView.xaml.cs">
+      <DependentUpon>ToolboxesContainerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Views\ToolMenusContainerView.xaml.cs">
+      <DependentUpon>ToolMenusContainerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Views\ViewMenuView.xaml.cs">
+      <DependentUpon>ViewMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\WpfUiModule.cs" />
+    <Compile Include="Overlays\ViewModels\OverlayShowHideViewModel.cs" />
+    <Compile Include="Calibration\ViewModels\CalibrationControlViewModel.cs" />
+    <Compile Include="UIServices\GuiModeButton.cs" />
+    <Compile Include="Messages\ViewModels\GenericMessageButton.cs" />
+    <Compile Include="Messages\ViewModels\GenericMessageViewModel.cs" />
+    <Compile Include="MovementDetection\ViewModels\MDViewModel.cs" />
+    <Compile Include="Overlays\ViewModels\RigidNPRTypesViewModel.cs" />
+    <Compile Include="Calibration\ViewModels\TargetViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Calibration\ViewModels\XDCalibViewModel.cs" />
+    <Compile Include="Calibration\Views\CalibrationControlView.xaml.cs">
+      <DependentUpon>CalibrationControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\Views\GenericMessageView.xaml.cs">
+      <DependentUpon>GenericMessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MovementDetection\Views\MDView.xaml.cs">
+      <DependentUpon>MDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Overlays\Views\OverlayShowHideView.xaml.cs">
+      <DependentUpon>OverlayShowHideView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calibration\Views\TargetView.xaml.cs">
+      <DependentUpon>TargetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calibration\Views\XDCalibView.xaml.cs">
+      <DependentUpon>XDCalibView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Menus\Views\CompareMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\Views\MeasureMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\Views\OverlayMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\Views\ToolboxesContainerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\Views\ToolMenusContainerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\Views\ViewMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calibration\Views\CalibrationControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Messages\Views\GenericMessageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MovementDetection\Views\MDView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Overlays\Views\OverlayShowHideView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calibration\Views\TargetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calibration\Views\XDCalibView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Layouts.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dicom.Contracts\Ws.Dicom.Interfaces.csproj">
+      <Project>{9a989358-e6d5-4379-8031-c23694f22a5b}</Project>
+      <Name>Ws.Dicom.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions.Mvvm\Ws.Extensions.Mvvm.csproj">
+      <Project>{037089e8-5112-4347-b5b4-fa84693dda9d}</Project>
+      <Name>Ws.Extensions.Mvvm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions.Wpf\Ws.Extensions.UI.Wpf.csproj">
+      <Project>{31b8a50f-7c39-4903-8d27-4f07ed22726a}</Project>
+      <Name>Ws.Extensions.UI.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\Ws.Extensions.csproj">
+      <Project>{79b49f0d-df9c-4c4f-8169-0686352589e1}</Project>
+      <Name>Ws.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fus.Persistency.Contracts\Ws.Dicom.Persistency.Interfaces.csproj">
+      <Project>{26F2B92E-DBB1-4A5E-80D2-FABB7417BFFC}</Project>
+      <Name>Ws.Dicom.Persistency.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fus.Persistency.Fo\Ws.Dicom.Persistency.Fo.csproj">
+      <Project>{c8007793-f232-4744-8f61-424a932539d5}</Project>
+      <Name>Ws.Dicom.Persistency.Fo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fus.Persistency.Wpf\Ws.Dicom.Persistency.UI.Wpf.csproj">
+      <Project>{0ad1fcf6-ff0d-4c79-b29c-85ac4f0052b8}</Project>
+      <Name>Ws.Dicom.Persistency.UI.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fus.Strips.Contracts\Ws.Fus.Strips.Interfaces.csproj">
+      <Project>{C29E43DB-DF32-44D9-95BE-36E93F11E344}</Project>
+      <Name>Ws.Fus.Strips.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fus.Wpf\Ws.Fus.UI.Wpf.csproj">
+      <Project>{8e4a847e-2e40-4f5f-ad62-77220f10fb6f}</Project>
+      <Name>Ws.Fus.UI.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FusInterface\Ws.Fus.Interfaces.csproj">
+      <Project>{9a460dad-0ec4-4587-b745-12c5cb667dd2}</Project>
+      <Name>Ws.Fus.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source\WPF_MFC_Host\WPF_MFC_Host.vcxproj">
+      <Project>{c5d8bff7-77e5-4946-b57a-36d0794ed7d2}</Project>
+      <Name>WPF_MFC_HOST</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ws.Fus.DicomViewer.Interfaces\Ws.Fus.DicomViewer.Interfaces.csproj">
+      <Project>{C4B37716-5794-486C-925F-D62657EA4693}</Project>
+      <Name>Ws.Fus.DicomViewer.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ws.Fus.DicomViewer.UI.Wpf\Ws.Fus.DicomViewer.UI.Wpf.csproj">
+      <Project>{e6985cd1-47e0-4cab-a093-6a6547790c2f}</Project>
+      <Name>Ws.Fus.DicomViewer.UI.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ws.Fus.Fge.Interfaces\Ws.Fus.Fge.Interfaces.csproj">
+      <Project>{F3690ABE-9398-4337-888D-940AA045B7D5}</Project>
+      <Name>Ws.Fus.Fge.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ws.Fus.Fge\Ws.Fus.Fge.csproj">
+      <Project>{F191FD0A-9321-4685-B7EA-F0763AE49C73}</Project>
+      <Name>Ws.Fus.Fge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ws.Fus.Strips\Ws.Fus.Strips.csproj">
+      <Project>{4E90AFBC-A9A6-415C-80A7-B83597AF6926}</Project>
+      <Name>Ws.Fus.Strips</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,213 @@
+﻿{
+  'imageLayouts': [
+    {
+      "name": "Normal View",
+      "columns": 3,
+      "rows": 2,
+      "images": [
+        {
+          "id": 1,
+          "row": 0,
+          "column": 0,
+          "span": 2
+        },
+        {
+          "id": 2,
+          "row": 0,
+          "column": 2,
+          "span": 1
+        },
+        {
+          "id": 3,
+          "row": 1,
+          "column": 2,
+          "span": 1
+        }
+      ] 
+    },
+    {
+      "name": "Normal View (4)",
+      "columns": 4,
+      "rows": 3,
+      "images": [
+        {
+          "id": 1,
+          "row": 0,
+          "column": 0,
+          "span": 3
+        },
+        {
+          "id": 2,
+          "row": 0,
+          "column": 3,
+          "span": 1
+        },
+        {
+          "id": 3,
+          "row": 1,
+          "column": 3,
+          "span": 1
+        },
+        {
+          "id": 4,
+          "row": 2,
+          "column": 3,
+          "span": 1
+        }
+      ] 
+    },
+    {
+      "name": "3 Side by side",
+      "columns": 3,
+      "rows": 1,
+      "images": [
+        {
+          "id": 1,
+          "row": 0,
+          "column": 0,
+          "span": 1
+        },
+        {
+          "id": 2,
+          "row": 0,
+          "column": 1,
+          "span": 1
+        },
+        {
+          "id": 3,
+          "row": 0,
+          "column": 2,
+          "span": 1
+        }
+      ] 
+    },
+    {
+      "name": "Big in the middle",
+      "columns": 8,
+      "rows": 4,
+      "images": [
+        {
+          "id": 1,
+          "row": 1,
+          "column": 0,
+          "span": 2
+        },
+        {
+          "id": 2,
+          "row": 0,
+          "column": 2,
+          "span": 4
+        },
+        {
+          "id": 3,
+          "row": 1,
+          "column": 6,
+          "span": 2
+        }
+      ] 
+    },
+	{
+      "name": "4X4",
+      "columns": 4,
+      "rows": 4,
+      "images": [
+        {
+          "id": 1,
+          "row": 0,
+          "column": 0,
+          "span": 1
+        },
+        {
+          "id": 2,
+          "row": 0,
+          "column": 1,
+          "span": 1
+        },
+        {
+          "id": 3,
+          "row": 0,
+          "column": 2,
+          "span": 1
+        },
+		{
+          "id": 4,
+          "row": 0,
+          "column": 3,
+          "span": 1
+        },
+		        {
+          "id": 5,
+          "row": 1,
+          "column": 0,
+          "span": 1
+        },
+        {
+          "id": 6,
+          "row": 1,
+          "column": 1,
+          "span": 1
+        },
+        {
+          "id": 7,
+          "row": 1,
+          "column": 2,
+          "span": 1
+        },
+		{
+          "id": 8,
+          "row": 1,
+          "column": 3,
+          "span": 1
+        },
+		{
+          "id": 9,
+          "row": 2,
+          "column": 0,
+          "span": 1
+        },
+        {
+          "id": 10,
+          "row": 2,
+          "column": 1,
+          "span": 1
+        },
+        {
+          "id": 11,
+          "row": 2,
+          "column": 2,
+          "span": 1
+        },
+		{
+          "id": 12,
+          "row": 2,
+          "column": 3,
+          "span": 1
+        },
+		{
+          "id": 13,
+          "row": 3,
+          "column": 0,
+          "span": 1
+        },
+        {
+          "id": 14,
+          "row": 3,
+          "column": 1,
+          "span": 1
+        },
+        {
+          "id": 15,
+          "row": 3,
+          "column": 2,
+          "span": 1
+        },
+		{
+          "id": 16,
+          "row": 3,
+          "column": 3,
+          "span": 1
+        }
+      ] 
+    }
+  ] 
+}

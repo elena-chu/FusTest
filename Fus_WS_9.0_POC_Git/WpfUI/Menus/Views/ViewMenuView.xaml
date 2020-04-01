@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="WpfUI.Menus.Views.ViewMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:local="clr-namespace:WpfUI.Menus.Views"
+             xmlns:extension="http://schemas.insightec.com/wpf/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="ButtonWithSubMenuLayoutStyle" TargetType="Button" BasedOn="{StaticResource ButtonWithSubMenuStyle}">
+            <!--Using without Converter={StaticResource InvertedBooleanConverter} because on click IsChecked property already set inverted-->
+            <!--<Setter Property="extensions:LeftClickContextMenu.OpeningFlag" Value="{Binding Path=IsChecked, RelativeSource={RelativeSource Self}}" />-->
+            <Setter Property="extension:LeftClickContextMenu.UsePreviewEvent" Value="True" />
+        </Style>
+
+        <ControlTemplate x:Key="LayoutMenuItemTemplate" TargetType="MenuItem">
+            <Border x:Name="Brd" Margin="2" CornerRadius="1" BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveBorderBrushKey}}">
+                <!--<ToggleButton Content="{Binding Name}" Command="{Binding ActionCommand}" IsChecked="{Binding IsActive, Mode=OneWay}" Width="40" Height="40" Margin="2" />-->
+                <TextBlock x:Name="Txt"  Width="32" Height="32" Text="{Binding Name}" FontSize="10" TextWrapping="Wrap" TextAlignment="Center" Margin="4" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsHighlighted" Value="true">
+                    <Setter TargetName="Brd" Property="Background" Value="#55FFFFFF"/>
+                </Trigger>
+                <DataTrigger Binding="{Binding IsActive}" Value="True">
+                    <Setter TargetName="Brd" Property="Background" Value="#DD7FCBF9"/>
+                </DataTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style x:Key="LayoutMenuItemStyle" TargetType="MenuItem">
+            <Setter Property="Header" Value="{Binding Name}"/>
+            <Setter Property="Command" Value="{Binding ActionCommand}" />
+            <Setter Property="Template" Value="{StaticResource LayoutMenuItemTemplate}" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid x:Name="ViewContent" TextBlock.FontSize="18" Height="Auto" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Button Style="{StaticResource ButtonWithSubMenuLayoutStyle}" FontFamily="Wingdings" Content="ÿ"  Grid.Column="0" DataContext="{Binding Layout}" Height="25" >
+            <Button.ContextMenu>
+                <ContextMenu Style="{StaticResource ToolsContextMenuStyle}" ItemContainerStyle="{StaticResource LayoutMenuItemStyle}"  >
+                    <ContextMenu.Template>
+                        <ControlTemplate TargetType="{x:Type ContextMenu}">
+                            <Border x:Name="Border" Background="{StaticResource BasicBrush}" BorderThickness="1" TextBlock.FontFamily="Arial">
+                                <!--<ItemsPresenter x:Name="ItemPresenter"  />-->
+                                <WrapPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" Orientation="Horizontal" Width="140"/>
+                            </Border>
+                        </ControlTemplate>
+                    </ContextMenu.Template>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+    </Grid>
+</UserControl>

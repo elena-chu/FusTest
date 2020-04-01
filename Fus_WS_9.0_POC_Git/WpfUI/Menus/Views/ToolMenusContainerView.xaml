@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="WpfUI.Menus.Views.ToolMenusContainerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:local="clr-namespace:WpfUI.Menus.Views"
+             xmlns:extensions="http://schemas.insightec.com/wpf/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Top"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="600">
+    
+    <UserControl.Resources>
+        <Style x:Key="MenuSeparatorStyle" TargetType="Rectangle">
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Width" Value="1" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,10,0,10" />
+            <Setter Property="Fill" Value="{StaticResource StrongBrush}" />
+            <Setter Property="Visibility" Value="{Binding IsChecked, ElementName=PinUpperBtn, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </Style>
+        <Thickness x:Key="RegularContentMargin" Left="0"  Top="0" Right="0" Bottom="0" />
+        <Thickness x:Key="CenteredContentMargin" Left="0"  Top="15" Right="0" Bottom="0" />
+        <extensions:BooleanToTrueFalseValueConverter x:Key="BooleanToTrueFalseValueConverter" TrueValue="60" FalseValue="30" />
+        <extensions:BooleanToTrueFalseValueConverter x:Key="BooleanToTrueFalseValueConverter1" TrueValue="{StaticResource CenteredContentMargin}" FalseValue="{StaticResource RegularContentMargin}" />
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="Auto" />
+
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="{StaticResource BasicBrush}" Grid.Row="1" Grid.ColumnSpan="5" Visibility="{Binding IsStayOpen, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}" StrokeThickness="0" />
+        <Rectangle Fill="{StaticResource FixedBrush}" Grid.ColumnSpan="5" Visibility="{Binding IsStayOpen, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Stretch" Height="120" />
+        <Rectangle Grid.Column="1" Grid.Row="1" Style="{StaticResource MenuSeparatorStyle}" />
+        <Rectangle Grid.Column="3" Grid.Row="1" Style="{StaticResource MenuSeparatorStyle}" />
+        <Rectangle Grid.Column="5" Grid.Row="1" Style="{StaticResource MenuSeparatorStyle}" />
+
+        <Expander x:Name="ViewMenu" 
+                  Style="{StaticResource PinableExpanderStyle}" Grid.RowSpan="2"
+                  Header="VIEW" 
+                  DataContext="{Binding ViewMenu}"
+                  extensions:PinnableExpander.IsPinned="{Binding IsStayOpen, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+                  IsExpanded="{Binding IsOpen, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+                  >
+            <local:ViewMenuView />
+        </Expander>
+
+        <Expander x:Name="CompareMenu" 
+                  Style="{StaticResource PinableExpanderStyle}" Grid.RowSpan="2" Grid.Column="2"
+                  Header="COMPARE" 
+                  DataContext="{Binding CompareMenu}"
+                  extensions:PinnableExpander.IsPinned="{Binding IsStayOpen, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+                  IsExpanded="{Binding IsOpen, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+                  >
+            <local:CompareMenuView />
+        </Expander>
+
+        <Expander x:Name="MeasureMenu" 
+                  Style="{StaticResource PinableExpanderStyle}" Grid.RowSpan="2" Grid.Column="4"
+                  Header="MEASURE" 
+                  DataContext="{Binding MeasureMenu}"
+                  extensions:PinnableExpander.IsPinned="{Binding IsStayOpen, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+                  IsExpanded="{Binding IsOpen, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+                  >
+            <local:MeasureMenuView />
+        </Expander>
+
+        <Expander x:Name="OverlaysMenu" 
+                  Style="{StaticResource PinableExpanderStyle}" Grid.RowSpan="2" Grid.Column="6"
+                  Header="OVERLAYS" 
+                  DataContext="{Binding OverlaysMenu}"
+                  extensions:PinnableExpander.IsPinned="{Binding IsStayOpen, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+                  IsExpanded="{Binding IsOpen, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}"
+                  >
+            <local:OverlayMenuView />
+        </Expander>
+
+        <Rectangle Stretch="Fill" Fill="{StaticResource FixedBrush}" Grid.Column="7" StrokeThickness="0" Margin="-1,0,0,0" />
+        <ToggleButton x:Name="PinUpperBtn" Style="{StaticResource PinButtonStyle}" Grid.Column="7" IsChecked="{Binding Path=IsStayOpen, Mode=TwoWay}"  />
+
+    </Grid>
+</UserControl>

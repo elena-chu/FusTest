@@ -1,0 +1,37 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#+
+void GenerateEnums(string cppPath, HashSet<string> enumNames = null, Dictionary<string, string> enumNamesMap = null)
+{
+    var cppContent = File.ReadAllText(cppPath);
+    var matchCollection = Regex.Matches(cppContent, @"^\s*enum\s+(\S+)\s*\{(\s*[^\}]+?)\s*\}\s*;", RegexOptions.Multiline);
+    
+    foreach (Match match in matchCollection)
+    {
+        var enumName = match.Groups[1].Value;
+        if (enumNames != null && !enumNames.Contains(enumName))
+            continue;
+
+        if (enumNamesMap != null && enumNamesMap.ContainsKey(enumName))
+            enumName = enumNamesMap[enumName];
+
+        var enumValues = match.Groups[2].Value;
+
+        enumValues = Regex.Replace(enumValues, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline).Replace("\t", "    ");
+        var enumLines = enumValues.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+        enumValues = string.Concat(enumLines.Select(line => "        " + line.Trim() + Environment.NewLine));
+#>
+    public enum <#= enumName #>
+    {
+<#+
+        WriteLine(enumValues);
+#>
+    }
+<#+
+    }     		
+}
+#>

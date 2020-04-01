@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="WpfUI.Menus.Views.CompareMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfUI.Menus.Views"
+             xmlns:extension="http://schemas.insightec.com/wpf/"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="300">
+   
+    <Grid TextBlock.FontSize="18" Height="Auto" Width="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings" FontWeight="Bold" Content="É" DataContext="{Binding Flicker}" />
+        <ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings 3" Content="vu" FontSize="12" DataContext="{Binding Curtain}" Grid.Column="1"/>
+        <ToggleButton Style="{StaticResource ToolToggleButtonStyle}" FontFamily="Wingdings" Content="z" DataContext="{Binding Fusion}" Grid.Column="2" />
+
+    </Grid>
+</UserControl>
